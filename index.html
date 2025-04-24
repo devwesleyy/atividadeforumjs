@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Atividades JavaScript - Estilo iOS</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #a0a0a0;
+      color: #1c1c1e;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #000000;
+      margin-bottom: 40px;
+      font-weight: 600;
+    }
+
+    section {
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      margin: 20px auto;
+      max-width: 600px;
+      padding: 24px 20px;
+      transition: all 0.3s ease;
+    }
+
+    h2 {
+      font-size: 18px;
+      color: #007aff;
+      font-weight: 500;
+      border-left: 4px solid #007aff;
+      padding-left: 10px;
+      margin-bottom: 15px;
+    }
+
+    input[type="number"] {
+      padding: 12px;
+      margin: 8px 5px;
+      width: calc(50% - 20px);
+      font-size: 16px;
+      border: 1px solid #d1d1d6;
+      border-radius: 10px;
+      outline: none;
+      background-color: #f2f2f7;
+      color: #1c1c1e;
+    }
+
+    button {
+      padding: 12px 20px;
+      background-color: #007aff;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 10px;
+      display: block;
+    }
+
+    button:hover {
+      background-color: #005ecb;
+    }
+
+    p {
+      font-size: 16px;
+      margin-top: 15px;
+      color: #3a3a3c;
+    }
+
+    p::selection,
+    input::selection {
+      background-color: #cce4ff;
+    }
+
+    ::placeholder {
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Atividades JavaScript</h1>
+
+  <section>
+    <h2>1. Olá Mundo</h2>
+    <p>Uma mensagem de boas-vindas será exibida ao carregar a página.</p>
+    <script>
+      alert('Olá Mundo');
+    </script>
+  </section>
+
+  <section>
+    <h2>2. Soma de 2 inteiros</h2>
+    <input type="number" id="num1" placeholder="Primeiro número">
+    <input type="number" id="num2" placeholder="Segundo número">
+    <button onclick="somar()">Somar</button>
+    <p id="resultadoSoma"></p>
+    <script>
+      function somar() {
+        const num1 = parseInt(document.getElementById('num1').value);
+        const num2 = parseInt(document.getElementById('num2').value);
+        const resultado = num1 + num2;
+        document.getElementById('resultadoSoma').textContent = 'Resultado: ' + resultado;
+      }
+    </script>
+  </section>
+
+  <section>
+    <h2>3. Alterar propriedade por ID</h2>
+    <p id="paragrafoId">Texto original.</p>
+    <button onclick="alterarPorId()">Alterar texto por ID</button>
+    <script>
+      function alterarPorId() {
+        document.getElementById('paragrafoId').textContent = 'Texto alterado por ID.';
+      }
+    </script>
+  </section>
+
+  <section>
+    <h2>4. Alterar propriedade por Name</h2>
+    <p name="paragrafoName">Texto original.</p>
+    <button onclick="alterarPorName()">Alterar texto por Name</button>
+    <script>
+      function alterarPorName() {
+        const elemento = document.getElementsByName('paragrafoName')[0];
+        elemento.textContent = 'Texto alterado por Name.';
+      }
+    </script>
+  </section>
+
+  <section>
+    <h2>5. Alterar propriedade por Class</h2>
+    <p class="paragrafoClass">Texto original.</p>
+    <button onclick="alterarPorClass()">Alterar texto por Class</button>
+    <script>
+      function alterarPorClass() {
+        const elemento = document.getElementsByClassName('paragrafoClass')[0];
+        elemento.textContent = 'Texto alterado por Class.';
+      }
+    </script>
+  </section>
+
+</body>
+</html>
